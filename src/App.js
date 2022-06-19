@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+import Compteur from './Compteur';
+class App extends React.Component {  
+  constructor(props){
+    super(props);
+    this.state= {show: false};
+    }
+  render() {
+    return <div style={{position:"relative",marginTop:"150px"}}>
+      <div style={{textAlign: "center"}}><button onClick={()=> this.setState({show :!this.state.show})}>click me!</button>
+         </div>
+      { this.state.show?<div style={{textAlign: "center" ,marginTop:"50px"}}>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNaHVhHHPWuKHsygonqKTpsWX5YJHE6JXB8Q&usqp=CAU" alt="" />
+        <h3>Zribi Omar</h3>
+        <h4>Developper JS</h4>
+        <Compteur>clearInterval(intervalID)</Compteur>  
+        </div> 
+        :null}
+      </div>
+}}
 export default App;
